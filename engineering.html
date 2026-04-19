@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samiur Rahman Khan — Machine Learning Researcher</title>
-<meta name="description" content="Samiur Rahman Khan. Machine learning researcher focused on neuromorphic computing, spiking neural networks, and efficient ML inference. London, UK.">
+<title>Samiur Rahman Khan — ML Engineer</title>
+<meta name="description" content="Samiur Rahman Khan. Machine learning engineer. Production ML systems, semantic search, FastAPI, PyTorch. London, UK.">
 <meta name="author" content="Samiur Rahman Khan">
 
-<meta property="og:title" content="Samiur Rahman Khan — Machine Learning Researcher">
-<meta property="og:description" content="Machine learning researcher focused on neuromorphic computing, spiking neural networks, and efficient ML inference.">
+<meta property="og:title" content="Samiur Rahman Khan — ML Engineer">
+<meta property="og:description" content="Machine learning engineer shipping production ML systems.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -218,49 +218,39 @@
     border-bottom-color: var(--accent);
   }
 
-  /* ===== Publications ===== */
-  .pub-stats {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    color: var(--ink-muted);
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px dashed var(--rule);
+  /* ===== Metrics strip ===== */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
   }
 
-  .pub-stats span { margin-right: 1.5rem; }
-
-  .pub-item {
-    margin-bottom: 2rem;
-    padding-left: 1rem;
-    border-left: 2px solid var(--rule);
+  .metric {
+    padding: 1.25rem 0.5rem;
+    text-align: center;
+    border-right: 1px solid var(--rule);
   }
 
-  .pub-item:last-child { margin-bottom: 0; }
+  .metric:last-child { border-right: none; }
 
-  .pub-title {
+  .metric-value {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.75rem;
     font-weight: 500;
-    font-size: 1.05rem;
-    line-height: 1.4;
+    color: var(--ink);
+    line-height: 1;
     margin-bottom: 0.25rem;
   }
 
-  .pub-meta {
+  .metric-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--ink-muted);
-    margin-bottom: 0.5rem;
-  }
-
-  .pub-citations {
-    display: inline-block;
-    margin-left: 0.5rem;
-    padding: 0.1rem 0.5rem;
-    background: var(--bg-alt);
-    border-radius: 2px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--accent);
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
   /* ===== Projects ===== */
@@ -312,6 +302,20 @@
     background: var(--accent);
     color: var(--bg);
     border-bottom: none;
+  }
+
+  .badge-live {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    background: #2d5a3d;
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
   }
 
   /* ===== Experience / Education ===== */
@@ -390,6 +394,17 @@
     line-height: 1.6;
   }
 
+  /* ===== Publications (compact on eng page) ===== */
+  .pub-compact {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    margin-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--rule);
+  }
+
+  .pub-compact strong { color: var(--ink); font-weight: 500; }
+
   /* ===== Footer ===== */
   footer.site-footer {
     padding: 2.5rem 0;
@@ -429,6 +444,9 @@
     nav.primary.open { display: flex; }
     .menu-toggle { display: block; }
     .project-header, .entry-header { flex-direction: column; gap: 0.15rem; }
+    .metrics { grid-template-columns: repeat(3, 1fr); }
+    .metric-value { font-size: 1.3rem; }
+    .metric-label { font-size: 0.6rem; }
   }
 
   ::selection { background: var(--accent); color: var(--bg); }
@@ -441,10 +459,10 @@
     <a href="#top" class="brand">Samiur Rahman Khan</a>
     <button class="menu-toggle" aria-label="Toggle menu">MENU</button>
     <nav class="primary">
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#skills">Stack</a>
+      <a href="#research">Research</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -455,162 +473,110 @@
   <!-- ===== HERO ===== -->
   <section class="hero wrap">
     <h1>Samiur Rahman Khan</h1>
-    <div class="hero-subtitle">Machine Learning Researcher &nbsp;·&nbsp; London, UK</div>
+    <div class="hero-subtitle">Machine Learning Engineer &nbsp;·&nbsp; London, UK</div>
 
     <p class="hero-intro">
-      I am a researcher working on machine learning, combinatorial optimisation, and explainable AI, with peer-reviewed publications cited 27 times and a top-ranked MSc thesis in biomedical gait pattern recognition. My research philosophy centres on root-cause analysis and unbiased analytics of the subject matter, with visual distribution used to preserve authenticity. I am currently targeting PhD research in efficient ML inference, neuromorphic computing, and high-performance computing.
+      I build production machine learning systems from research paper to live deployment. Currently shipping two ML products in production — semantic retrieval systems for researchers and research funding — while pushing rigorous benchmarks on energy-efficient neural networks. I work across the full ML stack: PyTorch for modelling, FastAPI and Postgres for serving, and Vercel and Railway for shipping.
     </p>
 
     <div class="hero-status">
-      <strong>Current:</strong> Submitted <em>T=8 or Not T=8: Pareto-Optimal Timestep Selection for Energy-Efficient SNN Anomaly Detection</em> to ICONS 2026. Applying for PhD positions in Germany, Sweden, the Netherlands, and Austria.
+      <strong>Open to:</strong> ML engineering, applied research, and data science roles in the UK and Europe. Most interested in teams working on efficient inference, retrieval systems, or ML infrastructure.
     </div>
 
     <div class="contact-row">
       <a href="mailto:samiurk70@gmail.com">samiurk70@gmail.com</a>
       <a href="https://github.com/samiurk70" target="_blank" rel="noopener">github.com/samiurk70</a>
       <a href="https://www.linkedin.com/in/samiurk70" target="_blank" rel="noopener">linkedin.com/in/samiurk70</a>
-      <a href="./cv.pdf" target="_blank">CV (PDF)</a>
-    </div>
-  </section>
-
-  <!-- ===== RESEARCH ===== -->
-  <section id="research" class="wrap">
-    <div class="section-label">Research interests</div>
-    <h2>What I work on</h2>
-
-    <p>
-      My research sits at the intersection of efficient machine learning and neuromorphic computing, with a methodological commitment to rigorous, reproducible evaluation across multiple seeds and datasets. Three threads run through recent work.
-    </p>
-
-    <div class="skill-group" style="margin-top: 1.75rem;">
-      <div class="skill-label">Energy-efficient inference</div>
-      <div class="skill-items">Spiking neural networks for anomaly detection, timestep-sensitivity Pareto analysis, and theoretical energy projections on neuromorphic substrates such as Intel Loihi. Empirical work on NSL-KDD, UNSW-NB15, thyroid, and cardiotocography benchmarks.</div>
+      <a href="./cv-industry.pdf" target="_blank">CV (PDF)</a>
     </div>
 
-    <div class="skill-group">
-      <div class="skill-label">Neural combinatorial optimisation</div>
-      <div class="skill-items">Generalisation behaviour of attention-based solvers for the Travelling Salesman Problem at scales from TSP-20 to TSP-200, with progressive instance scaling and graph embedding normalisation as fine-tuning strategies.</div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-label">LLM compression and explainability</div>
-      <div class="skill-items">Quantisation-aware knowledge distillation for reasoning benchmarks (HellaSwag, ARC, WinoGrande), and SHAP and LIME applied to ML systems in regulated domains.</div>
-    </div>
-  </section>
-
-  <!-- ===== PUBLICATIONS ===== -->
-  <section id="publications" class="wrap">
-    <div class="section-label">Publications</div>
-    <h2>Peer-reviewed research</h2>
-
-    <div class="pub-stats">
-      <span>Google Scholar: 27 citations</span>
-      <span>h-index: 2</span>
-      <span>i10-index: 2</span>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">T=8 or Not T=8: Pareto-Optimal Timestep Selection for Energy-Efficient SNN Anomaly Detection</div>
-      <div class="pub-meta">Khan, S. · ICONS 2026 (under review) <span class="pub-citations">submitted</span></div>
-      <p>Timestep-sensitivity Pareto frontier analysis for spiking autoencoders. Multi-seed evaluation across five seeds and four benchmark datasets, with honest energy labelling distinguishing measured GPU energy from theoretical neuromorphic projections.</p>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">Novel Identity Check Using W3C Standards and Hybrid Blockchain for Paperless Verification</div>
-      <div class="pub-meta">Khan, S., Al-Amin, M. · IJIEEB Vol. 15 No. 4, 2023</div>
-      <p>DOI: <a href="https://doi.org/10.5815/ijieeb.2023.04.02" target="_blank" rel="noopener">10.5815/ijieeb.2023.04.02</a></p>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">Towards a Secured Smart IoT Using Lightweight Blockchain for Pharmacy Products</div>
-      <div class="pub-meta">Sohan, M., Khan, S. et al. · arXiv, 2022 <span class="pub-citations">13 citations</span></div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">A Pragmatical Study on Blockchain-Empowered Decentralized Application Development Platform</div>
-      <div class="pub-meta">Khan, S. et al. · ICCA 2020 (ACM) <span class="pub-citations">14 citations</span></div>
-      <p>DOI: <a href="https://dl.acm.org/doi/10.1145/3377049.3377136" target="_blank" rel="noopener">10.1145/3377049.3377136</a></p>
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-value">2</div>
+        <div class="metric-label">Live ML products</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">24,699</div>
+        <div class="metric-label">Grants indexed</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">27</div>
+        <div class="metric-label">Citations</div>
+      </div>
     </div>
   </section>
 
   <!-- ===== PROJECTS ===== -->
   <section id="projects" class="wrap">
-    <div class="section-label">Selected projects</div>
-    <h2>Research and engineering</h2>
+    <div class="section-label">Shipped</div>
+    <h2>Production ML systems</h2>
+
+    <p style="margin-bottom: 2rem; color: var(--ink-muted);">
+      Two end-to-end ML products I designed, built, and deployed solo: model, infrastructure, frontend, and ops. Both are live and accepting traffic.
+    </p>
 
     <div class="project">
       <div class="project-header">
-        <h3>Timestep-Sensitivity Pareto Analysis for SNNs</h3>
-        <div class="project-links">
-          <a href="https://github.com/samiurk70/Timestep-Sensitivity-Pareto-Analysis-SNN-" target="_blank" rel="noopener">github</a>
-        </div>
-      </div>
-      <div class="project-stack">Python · PyTorch · SpikingJelly · FLOPs analysis · multi-seed evaluation</div>
-      <p>Demonstrated that SNN-based inference matches deep autoencoder F1-scores within 1.3% on real benchmark datasets (Thyroid, NSL-KDD) while achieving a 35 to 87x reduction in energy consumption. Includes T-sensitivity analysis across T ∈ {4, 8, 16, 32} and a Pareto-optimal selection methodology.</p>
-    </div>
-
-    <div class="project">
-      <div class="project-header">
-        <h3>ReviewerMatch — Semantic Researcher Discovery</h3>
-        <div class="project-links">
-          <a href="https://github.com/samiurk70/reviewermatch-api" target="_blank" rel="noopener">github</a>
-        </div>
-      </div>
-      <div class="project-stack">FastAPI · sentence-transformers · FAISS · Railway · Vercel · PostgreSQL</div>
-      <p>Production ML system indexing active ML and CS researchers from OpenAlex into a 384-dimensional semantic space. Returns ranked shortlists for peer review, collaboration, and supervisor search, reranked by similarity, h-index, and recency. Deployed full-stack with edge proxying and pre-computed embeddings.</p>
-      <a href="https://reviewermatch.vercel.app" target="_blank" rel="noopener" class="project-demo">Live demo →</a>
-    </div>
-
-    <div class="project">
-      <div class="project-header">
-        <h3>GrantMatch — Funding Opportunity Retrieval</h3>
+        <h3>GrantMatch <span class="badge-live">Live</span></h3>
         <div class="project-links">
           <a href="https://github.com/samiurk70/grantmatch-api" target="_blank" rel="noopener">github</a>
         </div>
       </div>
-      <div class="project-stack">FastAPI · ML reranker · semantic search · 24,699 grants indexed</div>
-      <p>Parent project for ReviewerMatch. A neural information retrieval system for UK and EU research funding, ingesting from UKRI, Innovate UK, GOV.UK, and European Commission CORDIS. Matches project descriptions to active grants through semantic similarity with TRL, sector, and organisation-type filters.</p>
-      <a href="https://grantmatch-web.vercel.app/demo" target="_blank" rel="noopener" class="project-demo">Live demo →</a>
+      <div class="project-stack">FastAPI · sentence-transformers · FAISS · PostgreSQL · Railway · Vercel</div>
+      <p>A neural information retrieval system for UK and EU research funding. Indexes 24,699 live grants from UKRI, Innovate UK, GOV.UK, and European Commission CORDIS into a 384-dimensional semantic space. Ranks by semantic match plus filters for TRL, sector, funding amount, and organisation type. Full-stack: API, typed frontend, edge proxying, and API-key authentication.</p>
+      <a href="https://grantmatch-web.vercel.app/demo" target="_blank" rel="noopener" class="project-demo">Try the demo →</a>
     </div>
 
     <div class="project">
       <div class="project-header">
-        <h3>Human Gait Analysis — Biomedical ML</h3>
+        <h3>ReviewerMatch <span class="badge-live">Live</span></h3>
+        <div class="project-links">
+          <a href="https://github.com/samiurk70/reviewermatch-api" target="_blank" rel="noopener">github</a>
+        </div>
+      </div>
+      <div class="project-stack">FastAPI · sentence-transformers · FAISS · PostgreSQL · Railway · Vercel</div>
+      <p>Semantic researcher discovery. Takes a paper abstract and returns a ranked shortlist of active ML and CS researchers from OpenAlex, reranked by similarity, h-index, and recency. All ML inference happens offline on Colab; the production service only rebuilds the FAISS index from pre-computed embedding bytes in Postgres, keeping the free tier well within memory limits. Demonstrates practical deployment tradeoffs for ML systems on constrained infrastructure.</p>
+      <a href="https://reviewermatch.vercel.app" target="_blank" rel="noopener" class="project-demo">Try the demo →</a>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>SNN Anomaly Detection Benchmark Suite</h3>
+        <div class="project-links">
+          <a href="https://github.com/samiurk70/Timestep-Sensitivity-Pareto-Analysis-SNN-" target="_blank" rel="noopener">github</a>
+        </div>
+      </div>
+      <div class="project-stack">Python · PyTorch · SpikingJelly · multi-seed evaluation · FLOPs analysis</div>
+      <p>Rigorous benchmark suite for spiking neural networks on anomaly detection. Five-seed evaluation across four datasets (NSL-KDD, UNSW-NB15, thyroid, cardiotocography). Results: F1 within 1.3% of ANN baselines at 35 to 87x lower theoretical energy on neuromorphic hardware. Paper submitted to ICONS 2026.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>Human Gait Analysis</h3>
         <div class="project-links">
           <a href="https://github.com/samiurk70/Gait-Readme" target="_blank" rel="noopener">github</a>
         </div>
       </div>
       <div class="project-stack">Python · MySQL · Random Forest · Dynamic Time Warping · SHAP · LIME</div>
-      <p>Pattern-recognition pipeline on real pressure and temperature data from 312 patients, identifying gait abnormalities across four metatarsal regions. Abnormality index achieved 22% detection accuracy for patients requiring medical attention, against a 10% baseline. Awarded Top 5 MSc Data Science thesis at Middlesex University, 2025, graded Distinction.</p>
+      <p>Biomedical ML pipeline on real pressure and temperature data from 312 patients, identifying gait abnormalities across four metatarsal regions. 22% detection accuracy for patients requiring medical attention, against a 10% baseline. Awarded Top 5 MSc Data Science thesis at Middlesex University, 2025, graded Distinction.</p>
     </div>
 
     <div class="project">
       <div class="project-header">
-        <h3>Neural Combinatorial Optimisation Study</h3>
-        <div class="project-links">
-          <a href="https://github.com/samiurk70/Neural-co-generalisation" target="_blank" rel="noopener">github</a>
-        </div>
-      </div>
-      <div class="project-stack">Python · PyTorch Geometric · TSPLib · GNN · Attention Model</div>
-      <p>Reproduced and extended Kool et al. across TSP-20 to TSP-200, quantifying non-linear generalisation degradation above a critical scale threshold. Proposed progressive instance scaling and graph embedding normalisation, closing the optimality gap by 2% without full retraining.</p>
-    </div>
-
-    <div class="project">
-      <div class="project-header">
-        <h3>Quantisation-Aware Knowledge Distillation for LLM Reasoning</h3>
+        <h3>LLM Quantisation-Aware Knowledge Distillation</h3>
         <div class="project-links">
           <a href="https://github.com/samiurk70/Qa-Kd-llm-reasoning" target="_blank" rel="noopener">github</a>
         </div>
       </div>
       <div class="project-stack">Python · HuggingFace · BitsAndBytes · GPTQ · DistilBERT</div>
-      <p>Joint QA-KD retained higher reasoning accuracy at 4-bit precision than sequential compression, with 1.67% gains on out-of-distribution benchmarks (HellaSwag, ARC, WinoGrande).</p>
+      <p>Joint QA-KD retained higher reasoning accuracy at 4-bit precision than sequential compression, with 1.67% gains on out-of-distribution benchmarks (HellaSwag, ARC, WinoGrande). Practical study of compression-accuracy tradeoffs for LLM deployment.</p>
     </div>
   </section>
 
   <!-- ===== EXPERIENCE ===== -->
   <section id="experience" class="wrap">
     <div class="section-label">Experience</div>
-    <h2>Professional trajectory</h2>
+    <h2>Where I have worked</h2>
 
     <div class="entry">
       <div class="entry-header">
@@ -619,10 +585,10 @@
       </div>
       <div class="entry-org">Self-directed applied research · London, UK</div>
       <ul class="bullets">
-        <li>Designed and benchmarked an SNN architecture in SpikingJelly achieving anomaly-detection F1 within 1.3% of ANN baselines, with 35 to 87x energy reduction.</li>
-        <li>Reproduced and extended the attention model for TSP across scales 20 to 200, proposing fine-tuning strategies that closed the optimality gap by 2% without retraining.</li>
-        <li>Investigated quantisation-aware knowledge distillation for LLM compression, with joint QA-KD outperforming sequential compression by 1.67% on reasoning benchmarks.</li>
-        <li>Conducting XAI research with Middlesex University academic staff using SHAP and LIME for model transparency in regulated domains.</li>
+        <li>Shipped two full-stack ML products to production (GrantMatch, ReviewerMatch) handling semantic search across 24,699 grants and tens of thousands of researchers.</li>
+        <li>Benchmarked SNN architectures against ANN baselines, matching F1 within 1.3% at 35 to 87x lower theoretical energy on neuromorphic targets.</li>
+        <li>Ran rigorous multi-seed evaluation across four datasets with a Pareto-optimal methodology for timestep selection — submitted to ICONS 2026.</li>
+        <li>Built the LLM compression pipeline for QA-KD research, achieving 1.67% out-of-distribution reasoning gains over sequential compression.</li>
       </ul>
     </div>
 
@@ -635,7 +601,7 @@
       <ul class="bullets">
         <li>Delivered undergraduate modules in discrete mathematics, computer networks, and Cisco-certified courses to cohorts of 60 plus students.</li>
         <li>Designed and launched a new PGD curriculum covering ICT, data science, and cybersecurity, adopted as a core departmental offering.</li>
-        <li>Supervised 8 final-year undergraduate research theses, with 2 students progressing to publication.</li>
+        <li>Supervised 8 final-year research theses, with 2 students progressing to publication.</li>
       </ul>
     </div>
 
@@ -648,7 +614,44 @@
       <ul class="bullets">
         <li>Led data-driven marketing analytics across five enterprise clients using HubSpot, Google Analytics, and Tableau, informing Web3 go-to-market strategy.</li>
         <li>Conducted Python and SQL market research, reducing requirement-gathering cycles by approximately 30%.</li>
+        <li>Translated technical blockchain architecture into commercial requirements documents for non-technical stakeholders.</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ===== STACK ===== -->
+  <section id="skills" class="wrap">
+    <div class="section-label">Stack</div>
+    <h2>What I build with</h2>
+
+    <div class="skill-group">
+      <div class="skill-label">Languages</div>
+      <div class="skill-items">Python, SQL, C / C++, R</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">ML frameworks</div>
+      <div class="skill-items">PyTorch, TensorFlow, HuggingFace, sentence-transformers, Scikit-learn, SpikingJelly, NumPy, Pandas</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Production and infrastructure</div>
+      <div class="skill-items">FastAPI, Docker, PostgreSQL, MySQL, MongoDB, FAISS, Redis, Railway, Vercel, AWS Redshift, Google Cloud, Git, CI / CD pipelines, MLflow, REST API design</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">ML techniques</div>
+      <div class="skill-items">Semantic search and retrieval, anomaly detection, knowledge distillation, LLM fine-tuning and compression, RAG, graph neural networks, transformer architectures, quantisation, explainable AI (SHAP, LIME)</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Data and analytics</div>
+      <div class="skill-items">Apache Spark, Hadoop, Power BI, Tableau, Excel, Google Data Studio, A/B testing, feature engineering, model monitoring</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Ways of working</div>
+      <div class="skill-items">Agile / Scrum, code review, technical writing, mentoring, research-to-production translation</div>
     </div>
   </section>
 
@@ -660,80 +663,75 @@
     <div class="entry">
       <div class="entry-header">
         <div class="entry-role">MSc Data Science</div>
-        <div class="entry-date">Jan 2024 — Feb 2025</div>
+        <div class="entry-date">2024 — 2025</div>
       </div>
       <div class="entry-org">Middlesex University London</div>
-      <p style="font-size: 0.98rem; color: var(--ink-muted);">Awarded <strong>Distinction</strong>. Top 5 MSc thesis project across the Data Science cohort, 2025. Modules: Machine Learning, Visual Data Analysis, Applied Data Analytics, Ethics in Data Science.</p>
+      <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Distinction</strong>. Top 5 MSc thesis across the cohort.</p>
     </div>
 
     <div class="entry">
       <div class="entry-header">
         <div class="entry-role">MSc Computer Network and Architecture</div>
-        <div class="entry-date">Jan 2021 — Sep 2022</div>
+        <div class="entry-date">2021 — 2022</div>
       </div>
       <div class="entry-org">American International University Bangladesh</div>
-      <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Summa Cum Laude</strong>, CGPA 3.98 / 4.00. Modules: Advanced Computer Networks, Cisco DevOps, Cyberops, Parallel Computation, System Security.</p>
+      <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Summa Cum Laude</strong>, CGPA 3.98 / 4.00.</p>
     </div>
 
     <div class="entry">
       <div class="entry-header">
         <div class="entry-role">BSc Computer Science</div>
-        <div class="entry-date">Jan 2016 — Dec 2019</div>
+        <div class="entry-date">2016 — 2019</div>
       </div>
       <div class="entry-org">American International University Bangladesh</div>
-      <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Best BSc Thesis Award</strong> at ICCA conference, ACM publications. Modules: Discrete Mathematics, Computer Graphics, Web Technology, Embedded Systems, CCNA, Linux.</p>
+      <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Best BSc Thesis Award</strong>, ICCA conference, ACM publications.</p>
     </div>
   </section>
 
-  <!-- ===== SKILLS ===== -->
-  <section id="skills" class="wrap">
-    <div class="section-label">Technical stack</div>
-    <h2>Tools and methods</h2>
+  <!-- ===== RESEARCH (DEMOTED) ===== -->
+  <section id="research" class="wrap">
+    <div class="section-label">Research</div>
+    <h2>Published work</h2>
 
-    <div class="skill-group">
-      <div class="skill-label">Languages</div>
-      <div class="skill-items">Python, R, C / C++, SQL</div>
+    <p style="color: var(--ink-muted); margin-bottom: 1.5rem;">
+      I keep a research publication record alongside engineering work. Full research profile and PhD application materials live on <a href="./index.html">the research page</a>. Summary: 27 Google Scholar citations, h-index 2, one paper under review at ICONS 2026.
+    </p>
+
+    <div class="pub-compact">
+      <strong>T=8 or Not T=8: Pareto-Optimal Timestep Selection for Energy-Efficient SNN Anomaly Detection.</strong> Khan, S. ICONS 2026, under review.
     </div>
 
-    <div class="skill-group">
-      <div class="skill-label">Machine learning</div>
-      <div class="skill-items">PyTorch, TensorFlow, Scikit-learn, HuggingFace, SpikingJelly, NumPy, Pandas, SHAP, LIME</div>
+    <div class="pub-compact">
+      <strong>Novel Identity Check Using W3C Standards and Hybrid Blockchain for Paperless Verification.</strong> Khan, S., Al-Amin, M. IJIEEB Vol. 15 No. 4, 2023.
     </div>
 
-    <div class="skill-group">
-      <div class="skill-label">Research areas</div>
-      <div class="skill-items">Neuromorphic ML, spiking neural networks, anomaly detection, knowledge distillation, LLM compression, graph neural networks, RAG, transformer architectures, combinatorial optimisation, explainable AI</div>
+    <div class="pub-compact">
+      <strong>Towards a Secured Smart IoT Using Lightweight Blockchain for Pharmacy Products.</strong> Sohan, M., Khan, S. et al. arXiv, 2022. 13 citations.
     </div>
 
-    <div class="skill-group">
-      <div class="skill-label">Infrastructure</div>
-      <div class="skill-items">MySQL, MongoDB, PostgreSQL, Apache Spark, Hadoop, AWS Redshift, Google Cloud, Docker, Git, CI / CD, MLflow, FastAPI, REST APIs</div>
-    </div>
-
-    <div class="skill-group">
-      <div class="skill-label">Analytics</div>
-      <div class="skill-items">Power BI, Tableau, Excel, Google Data Studio</div>
+    <div class="pub-compact">
+      <strong>A Pragmatical Study on Blockchain-Empowered Decentralized Application Development Platform.</strong> Khan, S. et al. ICCA 2020, ACM. 14 citations.
     </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="wrap">
     <div class="section-label">Contact</div>
-    <h2>Get in touch</h2>
+    <h2>Let's talk</h2>
 
     <p>
-      I am actively applying for PhD positions for 2026 entry, with a particular interest in groups working on neuromorphic computing, efficient ML inference, and high-performance computing in Germany, Sweden, the Netherlands, and Austria. I am equally open to applied research roles.
+      I am open to ML engineering, applied research, and data science roles in the UK and Europe. If you are hiring for a team that works on efficient ML, retrieval systems, or ML infrastructure, I would very much like to hear from you.
     </p>
 
     <p>
-      The best way to reach me is by email. Reference letters, unpublished drafts, and the ICONS 2026 submission are available on request.
+      The fastest way to reach me is email. Code samples, references, and additional portfolio work are available on request.
     </p>
 
     <div class="contact-row">
       <a href="mailto:samiurk70@gmail.com">samiurk70@gmail.com</a>
       <a href="https://github.com/samiurk70" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/samiurk70" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="./cv.pdf" target="_blank">CV</a>
+      <a href="./cv-industry.pdf" target="_blank">CV</a>
     </div>
   </section>
 
@@ -743,7 +741,7 @@
   <div class="wrap">
     © 2026 Samiur Rahman Khan &nbsp;·&nbsp; London, UK &nbsp;·&nbsp; Last updated April 2026
     <div style="margin-top: 0.75rem;">
-      <a href="./engineering.html">Engineering profile →</a>
+      <a href="./index.html">Research profile →</a>
     </div>
   </div>
 </footer>
