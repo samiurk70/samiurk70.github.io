@@ -29,7 +29,10 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.75rem;
+  }
 
   body {
     font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
@@ -253,6 +256,41 @@
     letter-spacing: 0.08em;
   }
 
+  /* ===== Scroll-reveal (JS adds .js; no-JS stays visible) ===== */
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(1.1rem);
+    transition:
+      opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  html.js .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  html.js .reveal-delay-1 { transition-delay: 0.07s; }
+  html.js .reveal-delay-2 { transition-delay: 0.14s; }
+  html.js .reveal-delay-3 { transition-delay: 0.21s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    html.js .reveal,
+    html.js .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+    }
+
+    html.js .reveal-delay-1,
+    html.js .reveal-delay-2,
+    html.js .reveal-delay-3 { transition-delay: 0s; }
+  }
+
   /* ===== Projects ===== */
   .project {
     margin-bottom: 2.5rem;
@@ -261,6 +299,83 @@
   }
 
   .project:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+  .project-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.5rem 1.5rem 1.65rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+    box-shadow: 0 2px 8px rgba(26, 24, 21, 0.04);
+    transition:
+      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.25s ease;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 14px 48px rgba(26, 24, 21, 0.1);
+    border-color: #c4bfb5;
+    transform: translateY(-3px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card:hover { transform: none; }
+  }
+
+  .project-shots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0 1.15rem;
+  }
+
+  .shot {
+    margin: 0;
+  }
+
+  .browser-frame {
+    background: #1e1c1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 28px rgba(26, 24, 21, 0.14);
+  }
+
+  .browser-chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.55rem 0.75rem;
+    background: #2e2b27;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .browser-chrome span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #5c5852;
+  }
+
+  .browser-chrome span:nth-child(1) { background: #c75c5c; }
+  .browser-chrome span:nth-child(2) { background: #c9a227; }
+  .browser-chrome span:nth-child(3) { background: #5a9e6f; }
+
+  .browser-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .shot-cap {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ink-soft);
+    margin-top: 0.4rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
 
   .project-header {
     display: flex;
@@ -444,6 +559,7 @@
     nav.primary.open { display: flex; }
     .menu-toggle { display: block; }
     .project-header, .entry-header { flex-direction: column; gap: 0.15rem; }
+    .project-shots { grid-template-columns: 1fr; }
     .metrics { grid-template-columns: repeat(3, 1fr); }
     .metric-value { font-size: 1.3rem; }
     .metric-label { font-size: 0.6rem; }
@@ -451,6 +567,7 @@
 
   ::selection { background: var(--accent); color: var(--bg); }
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -472,50 +589,58 @@
 
   <!-- ===== HERO ===== -->
   <section class="hero wrap">
-    <h1>Samiur Rahman Khan</h1>
-    <div class="hero-subtitle">Machine Learning Engineer &nbsp;·&nbsp; London, UK</div>
-
-    <p class="hero-intro">
-      I build production machine learning systems from research paper to live deployment. Currently shipping two ML products in production — semantic retrieval systems for researchers and research funding — while pushing rigorous benchmarks on energy-efficient neural networks. I work across the full ML stack: PyTorch for modelling, FastAPI and Postgres for serving, and Vercel and Railway for shipping.
-    </p>
-
-    <div class="hero-status">
-      <strong>Open to:</strong> ML engineering, applied research, and data science roles in the UK and Europe. Most interested in teams working on efficient inference, retrieval systems, or ML infrastructure.
+    <div class="reveal">
+      <h1>Samiur Rahman Khan</h1>
+      <div class="hero-subtitle">Machine Learning Engineer &nbsp;·&nbsp; London, UK</div>
     </div>
 
-    <div class="contact-row">
-      <a href="mailto:samiurk70@gmail.com">samiurk70@gmail.com</a>
-      <a href="https://github.com/samiurk70" target="_blank" rel="noopener">github.com/samiurk70</a>
-      <a href="https://www.linkedin.com/in/samiurk70" target="_blank" rel="noopener">linkedin.com/in/samiurk70</a>
-      <a href="./cv-industry.pdf" target="_blank">CV (PDF)</a>
+    <div class="reveal reveal-delay-1">
+      <p class="hero-intro">
+        I build production machine learning systems from research paper to live deployment. Currently shipping two ML products in production — semantic retrieval systems for researchers and research funding — while pushing rigorous benchmarks on energy-efficient neural networks. I work across the full ML stack: PyTorch for modelling, FastAPI and Postgres for serving, and Vercel and Railway for shipping.
+      </p>
+
+      <div class="hero-status">
+        <strong>Open to:</strong> ML engineering, applied research, and data science roles in the UK and Europe. Most interested in teams working on efficient inference, retrieval systems, or ML infrastructure.
+      </div>
     </div>
 
-    <div class="metrics">
-      <div class="metric">
-        <div class="metric-value">2</div>
-        <div class="metric-label">Live ML products</div>
+    <div class="reveal reveal-delay-2">
+      <div class="contact-row">
+        <a href="mailto:samiurk70@gmail.com">samiurk70@gmail.com</a>
+        <a href="https://github.com/samiurk70" target="_blank" rel="noopener">github.com/samiurk70</a>
+        <a href="https://www.linkedin.com/in/samiurk70" target="_blank" rel="noopener">linkedin.com/in/samiurk70</a>
+        <a href="./cv-industry.pdf" target="_blank">CV (PDF)</a>
       </div>
-      <div class="metric">
-        <div class="metric-value">24,699</div>
-        <div class="metric-label">Grants indexed</div>
-      </div>
-      <div class="metric">
-        <div class="metric-value">27</div>
-        <div class="metric-label">Citations</div>
+
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-value">2</div>
+          <div class="metric-label">Live ML products</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">24,699</div>
+          <div class="metric-label">Grants indexed</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">27</div>
+          <div class="metric-label">Citations</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== PROJECTS ===== -->
   <section id="projects" class="wrap">
-    <div class="section-label">Shipped</div>
-    <h2>Production ML systems</h2>
+    <div class="reveal">
+      <div class="section-label">Shipped</div>
+      <h2>Production ML systems</h2>
 
-    <p style="margin-bottom: 2rem; color: var(--ink-muted);">
-      Two end-to-end ML products I designed, built, and deployed solo: model, infrastructure, frontend, and ops. Both are live and accepting traffic.
-    </p>
+      <p style="margin-bottom: 2rem; color: var(--ink-muted);">
+        Two end-to-end ML products I designed, built, and deployed solo: model, infrastructure, frontend, and ops. Both are live and accepting traffic.
+      </p>
+    </div>
 
-    <div class="project">
+    <div class="project project-card reveal reveal-delay-1">
       <div class="project-header">
         <h3>GrantMatch <span class="badge-live">Live</span></h3>
         <div class="project-links">
@@ -523,11 +648,27 @@
         </div>
       </div>
       <div class="project-stack">FastAPI · sentence-transformers · FAISS · PostgreSQL · Railway · Vercel</div>
+      <div class="project-shots" aria-label="GrantMatch interface screenshots">
+        <figure class="shot">
+          <div class="browser-frame">
+            <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="snapshots/grantsmatcher/hero.png" alt="GrantMatch product landing: headline and grant search call to action" width="1186" height="817" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="shot-cap">Product</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="browser-frame">
+            <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="snapshots/grantsmatcher/results.png" alt="GrantMatch demo showing ranked grant results and match scores" width="1281" height="1277" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="shot-cap">Ranked results</figcaption>
+        </figure>
+      </div>
       <p>A neural information retrieval system for UK and EU research funding. Indexes 24,699 live grants from UKRI, Innovate UK, GOV.UK, and European Commission CORDIS into a 384-dimensional semantic space. Ranks by semantic match plus filters for TRL, sector, funding amount, and organisation type. Full-stack: API, typed frontend, edge proxying, and API-key authentication.</p>
       <a href="https://grantmatch-web.vercel.app/demo" target="_blank" rel="noopener" class="project-demo">Try the demo →</a>
     </div>
 
-    <div class="project">
+    <div class="project project-card reveal reveal-delay-2">
       <div class="project-header">
         <h3>ReviewerMatch <span class="badge-live">Live</span></h3>
         <div class="project-links">
@@ -535,11 +676,27 @@
         </div>
       </div>
       <div class="project-stack">FastAPI · sentence-transformers · FAISS · PostgreSQL · Railway · Vercel</div>
+      <div class="project-shots" aria-label="ReviewerMatch interface screenshots">
+        <figure class="shot">
+          <div class="browser-frame">
+            <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="snapshots/reviewmatcher/Hero.png" alt="ReviewerMatch landing: semantic researcher discovery hero" width="874" height="589" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="shot-cap">Product</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="browser-frame">
+            <div class="browser-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="snapshots/reviewmatcher/Results.png" alt="ReviewerMatch results list with researcher matches" width="874" height="1097" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="shot-cap">Ranked matches</figcaption>
+        </figure>
+      </div>
       <p>Semantic researcher discovery. Takes a paper abstract and returns a ranked shortlist of active ML and CS researchers from OpenAlex, reranked by similarity, h-index, and recency. All ML inference happens offline on Colab; the production service only rebuilds the FAISS index from pre-computed embedding bytes in Postgres, keeping the free tier well within memory limits. Demonstrates practical deployment tradeoffs for ML systems on constrained infrastructure.</p>
       <a href="https://reviewermatch.vercel.app" target="_blank" rel="noopener" class="project-demo">Try the demo →</a>
     </div>
 
-    <div class="project">
+    <div class="project reveal">
       <div class="project-header">
         <h3>SNN Anomaly Detection Benchmark Suite</h3>
         <div class="project-links">
@@ -550,7 +707,7 @@
       <p>Rigorous benchmark suite for spiking neural networks on anomaly detection. Five-seed evaluation across four datasets (NSL-KDD, UNSW-NB15, thyroid, cardiotocography). Results: F1 within 1.3% of ANN baselines at 35 to 87x lower theoretical energy on neuromorphic hardware. Paper submitted to ICONS 2026.</p>
     </div>
 
-    <div class="project">
+    <div class="project reveal">
       <div class="project-header">
         <h3>Human Gait Analysis</h3>
         <div class="project-links">
@@ -561,7 +718,7 @@
       <p>Biomedical ML pipeline on real pressure and temperature data from 312 patients, identifying gait abnormalities across four metatarsal regions. 22% detection accuracy for patients requiring medical attention, against a 10% baseline. Awarded Top 5 MSc Data Science thesis at Middlesex University, 2025, graded Distinction.</p>
     </div>
 
-    <div class="project">
+    <div class="project reveal reveal-delay-1">
       <div class="project-header">
         <h3>LLM Quantisation-Aware Knowledge Distillation</h3>
         <div class="project-links">
@@ -575,10 +732,12 @@
 
   <!-- ===== EXPERIENCE ===== -->
   <section id="experience" class="wrap">
-    <div class="section-label">Experience</div>
-    <h2>Where I have worked</h2>
+    <div class="reveal">
+      <div class="section-label">Experience</div>
+      <h2>Where I have worked</h2>
+    </div>
 
-    <div class="entry">
+    <div class="entry reveal reveal-delay-1">
       <div class="entry-header">
         <div class="entry-role">AI / ML Research Engineer</div>
         <div class="entry-date">Aug 2025 — Present</div>
@@ -592,7 +751,7 @@
       </ul>
     </div>
 
-    <div class="entry">
+    <div class="entry reveal">
       <div class="entry-header">
         <div class="entry-role">Lecturer, Computer Science</div>
         <div class="entry-date">Dec 2022 — Dec 2023</div>
@@ -605,7 +764,7 @@
       </ul>
     </div>
 
-    <div class="entry">
+    <div class="entry reveal reveal-delay-1">
       <div class="entry-header">
         <div class="entry-role">Technical Business Analyst</div>
         <div class="entry-date">Feb 2022 — Aug 2022</div>
@@ -621,9 +780,12 @@
 
   <!-- ===== STACK ===== -->
   <section id="skills" class="wrap">
-    <div class="section-label">Stack</div>
-    <h2>What I build with</h2>
+    <div class="reveal">
+      <div class="section-label">Stack</div>
+      <h2>What I build with</h2>
+    </div>
 
+    <div class="reveal reveal-delay-1">
     <div class="skill-group">
       <div class="skill-label">Languages</div>
       <div class="skill-items">Python, SQL, C / C++, R</div>
@@ -653,14 +815,17 @@
       <div class="skill-label">Ways of working</div>
       <div class="skill-items">Agile / Scrum, code review, technical writing, mentoring, research-to-production translation</div>
     </div>
+    </div>
   </section>
 
   <!-- ===== EDUCATION ===== -->
   <section id="education" class="wrap">
-    <div class="section-label">Education</div>
-    <h2>Academic background</h2>
+    <div class="reveal">
+      <div class="section-label">Education</div>
+      <h2>Academic background</h2>
+    </div>
 
-    <div class="entry">
+    <div class="entry reveal reveal-delay-1">
       <div class="entry-header">
         <div class="entry-role">MSc Data Science</div>
         <div class="entry-date">2024 — 2025</div>
@@ -669,7 +834,7 @@
       <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Distinction</strong>. Top 5 MSc thesis across the cohort.</p>
     </div>
 
-    <div class="entry">
+    <div class="entry reveal">
       <div class="entry-header">
         <div class="entry-role">MSc Computer Network and Architecture</div>
         <div class="entry-date">2021 — 2022</div>
@@ -678,7 +843,7 @@
       <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Summa Cum Laude</strong>, CGPA 3.98 / 4.00.</p>
     </div>
 
-    <div class="entry">
+    <div class="entry reveal reveal-delay-1">
       <div class="entry-header">
         <div class="entry-role">BSc Computer Science</div>
         <div class="entry-date">2016 — 2019</div>
@@ -690,13 +855,16 @@
 
   <!-- ===== RESEARCH (DEMOTED) ===== -->
   <section id="research" class="wrap">
-    <div class="section-label">Research</div>
-    <h2>Published work</h2>
+    <div class="reveal">
+      <div class="section-label">Research</div>
+      <h2>Published work</h2>
 
-    <p style="color: var(--ink-muted); margin-bottom: 1.5rem;">
-      I keep a research publication record alongside engineering work. Full research profile and PhD application materials live on <a href="./index.html">the research page</a>. Summary: 27 Google Scholar citations, h-index 2, one paper under review at ICONS 2026.
-    </p>
+      <p style="color: var(--ink-muted); margin-bottom: 1.5rem;">
+        I keep a research publication record alongside engineering work. Full research profile and PhD application materials live on <a href="./index.html">the research page</a>. Summary: 27 Google Scholar citations, h-index 2, one paper under review at ICONS 2026.
+      </p>
+    </div>
 
+    <div class="reveal reveal-delay-1">
     <div class="pub-compact">
       <strong>T=8 or Not T=8: Pareto-Optimal Timestep Selection for Energy-Efficient SNN Anomaly Detection.</strong> Khan, S. ICONS 2026, under review.
     </div>
@@ -712,13 +880,17 @@
     <div class="pub-compact">
       <strong>A Pragmatical Study on Blockchain-Empowered Decentralized Application Development Platform.</strong> Khan, S. et al. ICCA 2020, ACM. 14 citations.
     </div>
+    </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
   <section id="contact" class="wrap">
-    <div class="section-label">Contact</div>
-    <h2>Let's talk</h2>
+    <div class="reveal">
+      <div class="section-label">Contact</div>
+      <h2>Let's talk</h2>
+    </div>
 
+    <div class="reveal reveal-delay-1">
     <p>
       I am open to ML engineering, applied research, and data science roles in the UK and Europe. If you are hiring for a team that works on efficient ML, retrieval systems, or ML infrastructure, I would very much like to hear from you.
     </p>
@@ -732,6 +904,7 @@
       <a href="https://github.com/samiurk70" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/samiurk70" target="_blank" rel="noopener">LinkedIn</a>
       <a href="./cv-industry.pdf" target="_blank">CV</a>
+    </div>
     </div>
   </section>
 
@@ -756,6 +929,26 @@
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => nav.classList.remove('open'));
     });
+  }
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canIO = 'IntersectionObserver' in window;
+  if (revealEls.length && !reduceMotion && canIO) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+    );
+    revealEls.forEach((el) => io.observe(el));
+  } else if (revealEls.length) {
+    revealEls.forEach((el) => el.classList.add('is-visible'));
   }
 </script>
 
