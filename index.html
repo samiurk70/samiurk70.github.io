@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samiur Rahman Khan — Machine Learning Researcher</title>
+<meta name="description" content="Samiur Rahman Khan. Machine learning researcher focused on neuromorphic computing, spiking neural networks, and efficient ML inference. London, UK.">
+<meta name="author" content="Samiur Rahman Khan">
+
+<meta property="og:title" content="Samiur Rahman Khan — Machine Learning Researcher">
+<meta property="og:description" content="Machine learning researcher focused on neuromorphic computing, spiking neural networks, and efficient ML inference.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --bg-alt: #f4f2ed;
+    --ink: #1a1815;
+    --ink-muted: #5a564f;
+    --ink-soft: #8a8680;
+    --rule: #d8d4cc;
+    --accent: #7a3b2e;
+    --accent-soft: #9a5548;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', 'Menlo', monospace;
+    font-size: 0.82em;
+    letter-spacing: 0.01em;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ===== Header ===== */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    background: rgba(251, 250, 247, 0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .brand {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  nav.primary {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  nav.primary a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s ease;
+  }
+
+  nav.primary a:hover { color: var(--accent); }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== Sections ===== */
+  main { padding-top: 4rem; }
+
+  section {
+    padding: 4.5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.005em;
+  }
+
+  h3 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+  }
+
+  p { margin-bottom: 1rem; }
+
+  p:last-child { margin-bottom: 0; }
+
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); transition: border-color 0.2s ease, color 0.2s ease; }
+
+  a:hover { color: var(--accent-soft); border-bottom-color: var(--accent); }
+
+  em { font-style: italic; color: var(--ink-muted); }
+
+  strong { font-weight: 600; color: var(--ink); }
+
+  /* ===== Hero ===== */
+  .hero {
+    padding: 5rem 0 4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.03em;
+    margin-bottom: 2rem;
+  }
+
+  .hero-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 620px;
+  }
+
+  .hero-status {
+    margin-top: 2rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-alt);
+    border-left: 2px solid var(--accent);
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+  }
+
+  .hero-status strong { color: var(--ink); }
+
+  /* ===== Quick links row ===== */
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+  }
+
+  .contact-row a {
+    color: var(--ink);
+    border-bottom-color: var(--ink-soft);
+  }
+
+  .contact-row a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ===== Publications ===== */
+  .pub-stats {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--rule);
+  }
+
+  .pub-stats span { margin-right: 1.5rem; }
+
+  .pub-item {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--rule);
+  }
+
+  .pub-item:last-child { margin-bottom: 0; }
+
+  .pub-title {
+    font-weight: 500;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+  }
+
+  .pub-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-citations {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.5rem;
+    background: var(--bg-alt);
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+  }
+
+  /* ===== Projects ===== */
+  .project {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px dashed var(--rule);
+  }
+
+  .project:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+  }
+
+  .project-stack {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-demo {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    border-bottom: none;
+    border-radius: 2px;
+    transition: background 0.2s ease;
+  }
+
+  .project-demo:hover {
+    background: var(--accent);
+    color: var(--bg);
+    border-bottom: none;
+  }
+
+  /* ===== Experience / Education ===== */
+  .entry {
+    margin-bottom: 2rem;
+  }
+
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .entry-role {
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+
+  .entry-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+  }
+
+  .entry-org {
+    font-style: italic;
+    color: var(--ink-muted);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  ul.bullets {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ul.bullets li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  ul.bullets li::before {
+    content: "·";
+    position: absolute;
+    left: 0.35rem;
+    top: -0.1rem;
+    color: var(--accent);
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  /* ===== Skills ===== */
+  .skill-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .skill-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+  }
+
+  .skill-items {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  /* ===== Footer ===== */
+  footer.site-footer {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  footer.site-footer a {
+    color: var(--ink-muted);
+    border-bottom-color: var(--rule);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 640px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 1.25rem; }
+    .header-inner { padding: 0.9rem 1.25rem; }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.5rem; }
+    section { padding: 3rem 0; }
+    .hero { padding: 3rem 0 2.5rem; }
+    nav.primary {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      flex-direction: column;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--rule);
+      gap: 1rem;
+    }
+    nav.primary.open { display: flex; }
+    .menu-toggle { display: block; }
+    .project-header, .entry-header { flex-direction: column; gap: 0.15rem; }
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="brand">Samiur Rahman Khan</a>
+    <button class="menu-toggle" aria-label="Toggle menu">MENU</button>
+    <nav class="primary">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero wrap">
+    <h1>Samiur Rahman Khan</h1>
+    <div class="hero-subtitle">Machine Learning Researcher &nbsp;·&nbsp; London, UK</div>
+
+    <p class="hero-intro">
+      I am a researcher working on machine learning, combinatorial optimisation, and explainable AI, with peer-reviewed publications cited 27 times and a top-ranked MSc thesis in biomedical gait pattern recognition. My research philosophy centres on root-cause analysis and unbiased analytics of the subject matter, with visual distribution used to preserve authenticity. I am currently targeting PhD research in efficient ML inference, neuromorphic computing, and high-performance computing.
+    </p>
+
+    <div class="hero-status">
+      <strong>Current:</strong> Submitted <em>T=8 or Not T=8: Pareto-Optimal Timestep Selection for Energy-Efficient SNN Anomaly Detection</em> to ICONS 2026. Applying for PhD positions in Germany, Sweden, the Netherlands, and Austria.
+    </div>
+
+    <div class="contact-row">
+      <a href="mailto:samiurk70@gmail.com">samiurk70@gmail.com</a>
+      <a href="https://github.com/samiurk70" target="_blank" rel="noopener">github.com/samiurk70</a>
+      <a href="https://www.linkedin.com/in/samiurk70" target="_blank" rel="noopener">linkedin.com/in/samiurk70</a>
+      <a href="./cv.pdf" target="_blank">CV (PDF)</a>
+    </div>
+  </section>
+
+  <!-- ===== RESEARCH ===== -->
+  <section id="research" class="wrap">
+    <div class="section-label">Research interests</div>
+    <h2>What I work on</h2>
+
+    <p>
+      My research sits at the intersection of efficient machine learning and neuromorphic computing, with a methodological commitment to rigorous, reproducible evaluation across multiple seeds and datasets. Three threads run through recent work.
+    </p>
+
+    <div class="skill-group" style="margin-top: 1.75rem;">
+      <div class="skill-label">Energy-efficient inference</div>
+      <div class="skill-items">Spiking neural networks for anomaly detection, timestep-sensitivity Pareto analysis, and theoretical energy projections on neuromorphic substrates such as Intel Loihi. Empirical work on NSL-KDD, UNSW-NB15, thyroid, and cardiotocography benchmarks.</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Neural combinatorial optimisation</div>
+      <div class="skill-items">Generalisation behaviour of attention-based solvers for the Travelling Salesman Problem at scales from TSP-20 to TSP-200, with progressive instance scaling and graph embedding normalisation as fine-tuning strategies.</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">LLM compression and explainability</div>
+      <div class="skill-items">Quantisation-aware knowledge distillation for reasoning benchmarks (HellaSwag, ARC, WinoGrande), and SHAP and LIME applied to ML systems in regulated domains.</div>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICATIONS ===== -->
+  <section id="publications" class="wrap">
+    <div class="section-label">Publications</div>
+    <h2>Peer-reviewed research</h2>
+
+    <div class="pub-stats">
+      <span>Google Scholar: 27 citations</span>
+      <span>h-index: 2</span>
+      <span>i10-index: 2</span>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">T=8 or Not T=8: Pareto-Optimal Timestep Selection for Energy-Efficient SNN Anomaly Detection</div>
+      <div class="pub-meta">Khan, S. · ICONS 2026 (under review) <span class="pub-citations">submitted</span></div>
+      <p>Timestep-sensitivity Pareto frontier analysis for spiking autoencoders. Multi-seed evaluation across five seeds and four benchmark datasets, with honest energy labelling distinguishing measured GPU energy from theoretical neuromorphic projections.</p>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Novel Identity Check Using W3C Standards and Hybrid Blockchain for Paperless Verification</div>
+      <div class="pub-meta">Khan, S., Al-Amin, M. · IJIEEB Vol. 15 No. 4, 2023</div>
+      <p>DOI: <a href="https://doi.org/10.5815/ijieeb.2023.04.02" target="_blank" rel="noopener">10.5815/ijieeb.2023.04.02</a></p>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">Towards a Secured Smart IoT Using Lightweight Blockchain for Pharmacy Products</div>
+      <div class="pub-meta">Sohan, M., Khan, S. et al. · arXiv, 2022 <span class="pub-citations">13 citations</span></div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">A Pragmatical Study on Blockchain-Empowered Decentralized Application Development Platform</div>
+      <div class="pub-meta">Khan, S. et al. · ICCA 2020 (ACM) <span class="pub-citations">14 citations</span></div>
+      <p>DOI: <a href="https://dl.acm.org/doi/10.1145/3377049.3377136" target="_blank" rel="noopener">10.1145/3377049.3377136</a></p>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="wrap">
+    <div class="section-label">Selected projects</div>
+    <h2>Research and engineering</h2>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>Timestep-Sensitivity Pareto Analysis for SNNs</h3>
+        <div class="project-links">
+          <a href="https://github.com/samiurk70/Timestep-Sensitivity-Pareto-Analysis-SNN-" target="_blank" rel="noopener">github</a>
+        </div>
+      </div>
+      <div class="project-stack">Python · PyTorch · SpikingJelly · FLOPs analysis · multi-seed evaluation</div>
+      <p>Demonstrated that SNN-based inference matches deep autoencoder F1-scores within 1.3% on real benchmark datasets (Thyroid, NSL-KDD) while achieving a 35 to 87x reduction in energy consumption. Includes T-sensitivity analysis across T ∈ {4, 8, 16, 32} and a Pareto-optimal selection methodology.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>ReviewerMatch — Semantic Researcher Discovery</h3>
+        <div class="project-links">
+          <a href="https://github.com/samiurk70/reviewermatch-api" target="_blank" rel="noopener">github</a>
+        </div>
+      </div>
+      <div class="project-stack">FastAPI · sentence-transformers · FAISS · Railway · Vercel · PostgreSQL</div>
+      <p>Production ML system indexing active ML and CS researchers from OpenAlex into a 384-dimensional semantic space. Returns ranked shortlists for peer review, collaboration, and supervisor search, reranked by similarity, h-index, and recency. Deployed full-stack with edge proxying and pre-computed embeddings.</p>
+      <a href="https://reviewermatch.vercel.app" target="_blank" rel="noopener" class="project-demo">Live demo →</a>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>GrantMatch — Funding Opportunity Matching</h3>
+        <div class="project-links">
+          <a href="https://github.com/samiurk70/grantmatch-api" target="_blank" rel="noopener">github</a>
+        </div>
+      </div>
+      <div class="project-stack">FastAPI · ML reranker · semantic search</div>
+      <p>Parent project for ReviewerMatch, focused on matching research proposals to active funding calls through semantic similarity and an ML-based reranker.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>Human Gait Analysis — Biomedical ML</h3>
+        <div class="project-links">
+          <a href="https://github.com/samiurk70/Gait-Readme" target="_blank" rel="noopener">github</a>
+        </div>
+      </div>
+      <div class="project-stack">Python · MySQL · Random Forest · Dynamic Time Warping · SHAP · LIME</div>
+      <p>Pattern-recognition pipeline on real pressure and temperature data from 312 patients, identifying gait abnormalities across four metatarsal regions. Abnormality index achieved 22% detection accuracy for patients requiring medical attention, against a 10% baseline. Awarded Top 5 MSc Data Science thesis at Middlesex University, 2025, graded Distinction.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>Neural Combinatorial Optimisation Study</h3>
+        <div class="project-links">
+          <a href="https://github.com/samiurk70/Neural-co-generalisation" target="_blank" rel="noopener">github</a>
+        </div>
+      </div>
+      <div class="project-stack">Python · PyTorch Geometric · TSPLib · GNN · Attention Model</div>
+      <p>Reproduced and extended Kool et al. across TSP-20 to TSP-200, quantifying non-linear generalisation degradation above a critical scale threshold. Proposed progressive instance scaling and graph embedding normalisation, closing the optimality gap by 2% without full retraining.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-header">
+        <h3>Quantisation-Aware Knowledge Distillation for LLM Reasoning</h3>
+        <div class="project-links">
+          <a href="https://github.com/samiurk70/Qa-Kd-llm-reasoning" target="_blank" rel="noopener">github</a>
+        </div>
+      </div>
+      <div class="project-stack">Python · HuggingFace · BitsAndBytes · GPTQ · DistilBERT</div>
+      <p>Joint QA-KD retained higher reasoning accuracy at 4-bit precision than sequential compression, with 1.67% gains on out-of-distribution benchmarks (HellaSwag, ARC, WinoGrande).</p>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="wrap">
+    <div class="section-label">Experience</div>
+    <h2>Professional trajectory</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">AI / ML Research Engineer</div>
+        <div class="entry-date">Aug 2025 — Present</div>
+      </div>
+      <div class="entry-org">Self-directed applied research · London, UK</div>
+      <ul class="bullets">
+        <li>Designed and benchmarked an SNN architecture in SpikingJelly achieving anomaly-detection F1 within 1.3% of ANN baselines, with 35 to 87x energy reduction.</li>
+        <li>Reproduced and extended the attention model for TSP across scales 20 to 200, proposing fine-tuning strategies that closed the optimality gap by 2% without retraining.</li>
+        <li>Investigated quantisation-aware knowledge distillation for LLM compression, with joint QA-KD outperforming sequential compression by 1.67% on reasoning benchmarks.</li>
+        <li>Conducting XAI research with Middlesex University academic staff using SHAP and LIME for model transparency in regulated domains.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Lecturer, Computer Science</div>
+        <div class="entry-date">Dec 2022 — Dec 2023</div>
+      </div>
+      <div class="entry-org">American International University Bangladesh · Dhaka</div>
+      <ul class="bullets">
+        <li>Delivered undergraduate modules in discrete mathematics, computer networks, and Cisco-certified courses to cohorts of 60 plus students.</li>
+        <li>Designed and launched a new PGD curriculum covering ICT, data science, and cybersecurity, adopted as a core departmental offering.</li>
+        <li>Supervised 8 final-year undergraduate research theses, with 2 students progressing to publication.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Technical Business Analyst</div>
+        <div class="entry-date">Feb 2022 — Aug 2022</div>
+      </div>
+      <div class="entry-org">Deepchain Labs · Dhaka</div>
+      <ul class="bullets">
+        <li>Led data-driven marketing analytics across five enterprise clients using HubSpot, Google Analytics, and Tableau, informing Web3 go-to-market strategy.</li>
+        <li>Conducted Python and SQL market research, reducing requirement-gathering cycles by approximately 30%.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="wrap">
+    <div class="section-label">Education</div>
+    <h2>Academic background</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">MSc Data Science</div>
+        <div class="entry-date">Jan 2024 — Feb 2025</div>
+      </div>
+      <div class="entry-org">Middlesex University London</div>
+      <p style="font-size: 0.98rem; color: var(--ink-muted);">Awarded <strong>Distinction</strong>. Top 5 MSc thesis project across the Data Science cohort, 2025. Modules: Machine Learning, Visual Data Analysis, Applied Data Analytics, Ethics in Data Science.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">MSc Computer Network and Architecture</div>
+        <div class="entry-date">Jan 2021 — Sep 2022</div>
+      </div>
+      <div class="entry-org">American International University Bangladesh</div>
+      <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Summa Cum Laude</strong>, CGPA 3.98 / 4.00. Modules: Advanced Computer Networks, Cisco DevOps, Cyberops, Parallel Computation, System Security.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">BSc Computer Science</div>
+        <div class="entry-date">Jan 2016 — Dec 2019</div>
+      </div>
+      <div class="entry-org">American International University Bangladesh</div>
+      <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Best BSc Thesis Award</strong> at ICCA conference, ACM publications. Modules: Discrete Mathematics, Computer Graphics, Web Technology, Embedded Systems, CCNA, Linux.</p>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="wrap">
+    <div class="section-label">Technical stack</div>
+    <h2>Tools and methods</h2>
+
+    <div class="skill-group">
+      <div class="skill-label">Languages</div>
+      <div class="skill-items">Python, R, C / C++, SQL</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Machine learning</div>
+      <div class="skill-items">PyTorch, TensorFlow, Scikit-learn, HuggingFace, SpikingJelly, NumPy, Pandas, SHAP, LIME</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Research areas</div>
+      <div class="skill-items">Neuromorphic ML, spiking neural networks, anomaly detection, knowledge distillation, LLM compression, graph neural networks, RAG, transformer architectures, combinatorial optimisation, explainable AI</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Infrastructure</div>
+      <div class="skill-items">MySQL, MongoDB, PostgreSQL, Apache Spark, Hadoop, AWS Redshift, Google Cloud, Docker, Git, CI / CD, MLflow, FastAPI, REST APIs</div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Analytics</div>
+      <div class="skill-items">Power BI, Tableau, Excel, Google Data Studio</div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="wrap">
+    <div class="section-label">Contact</div>
+    <h2>Get in touch</h2>
+
+    <p>
+      I am actively applying for PhD positions for 2026 entry, with a particular interest in groups working on neuromorphic computing, efficient ML inference, and high-performance computing in Germany, Sweden, the Netherlands, and Austria. I am equally open to applied research roles.
+    </p>
+
+    <p>
+      The best way to reach me is by email. Reference letters, unpublished drafts, and the ICONS 2026 submission are available on request.
+    </p>
+
+    <div class="contact-row">
+      <a href="mailto:samiurk70@gmail.com">samiurk70@gmail.com</a>
+      <a href="https://github.com/samiurk70" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/samiurk70" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="./cv.pdf" target="_blank">CV</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    © 2026 Samiur Rahman Khan &nbsp;·&nbsp; London, UK &nbsp;·&nbsp; Last updated April 2026
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav.primary');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
+  }
+</script>
+
+</body>
+</html>
