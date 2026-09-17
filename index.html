@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samiur Rahman Khan — Machine Learning Researcher</title>
-<meta name="description" content="Samiur Rahman Khan. Machine learning researcher focused on neuromorphic computing, spiking neural networks, and efficient ML inference. London, UK.">
+<title>Samiur Rahman Khan — DevOps / CloudOps Engineer</title>
+<meta name="description" content="Samiur Rahman Khan. DevOps and CloudOps Engineer focused on AWS, Infrastructure as Code, observability, and resilient system design. London, UK.">
 <meta name="author" content="Samiur Rahman Khan">
 
-<meta property="og:title" content="Samiur Rahman Khan — Machine Learning Researcher">
-<meta property="og:description" content="Machine learning researcher focused on neuromorphic computing, spiking neural networks, and efficient ML inference.">
+<meta property="og:title" content="Samiur Rahman Khan — DevOps / CloudOps Engineer">
+<meta property="og:description" content="DevOps and CloudOps Engineer focused on AWS, Infrastructure as Code, observability, and resilient system design. London, UK.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -184,7 +184,7 @@
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--ink);
-    max-width: 620px;
+    max-width: 650px;
   }
 
   .hero-status {
@@ -293,25 +293,6 @@
     font-size: 0.78rem;
     color: var(--ink-soft);
     margin-bottom: 0.75rem;
-  }
-
-  .project-demo {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.35rem 0.75rem;
-    background: var(--ink);
-    color: var(--bg);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    border-bottom: none;
-    border-radius: 2px;
-    transition: background 0.2s ease;
-  }
-
-  .project-demo:hover {
-    background: var(--accent);
-    color: var(--bg);
-    border-bottom: none;
   }
 
   /* ===== Experience / Education ===== */
@@ -441,11 +422,11 @@
     <a href="#top" class="brand">Samiur Rahman Khan</a>
     <button class="menu-toggle" aria-label="Toggle menu">MENU</button>
     <nav class="primary">
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
+      <a href="#expertise">Expertise</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+      <a href="#skills">Skills</a>
+      <a href="#publications">Publications</a>
     </nav>
   </div>
 </header>
@@ -455,14 +436,14 @@
   <!-- ===== HERO ===== -->
   <section class="hero wrap">
     <h1>Samiur Rahman Khan</h1>
-    <div class="hero-subtitle">Machine Learning Researcher &nbsp;·&nbsp; London, UK</div>
+    <div class="hero-subtitle">DevOps / CloudOps Engineer &nbsp;·&nbsp; London, UK</div>
 
     <p class="hero-intro">
-      I am a researcher working on machine learning, combinatorial optimisation, and explainable AI, with peer-reviewed publications cited 27 times and a top-ranked MSc thesis in biomedical gait pattern recognition. My research philosophy centres on root-cause analysis and unbiased analytics of the subject matter, with visual distribution used to preserve authenticity. I am currently targeting PhD research in efficient ML inference, neuromorphic computing, and high-performance computing.
+      My engineering background started in teaching—specifically covering computer networks, Linux, and Cisco IOS at the university level, where I built the hands-on lab environments for my students. Since then, I have shifted my focus entirely toward building cloud-native platforms on AWS. I spend my day-to-day designing, deploying, and operating live services using Terraform, Docker, ECS, and GitHub Actions, often working independently under real-world resource constraints to build resilient, self-healing systems.
     </p>
 
     <div class="hero-status">
-      <strong>Current:</strong> Submitted <em>T=8 or Not T=8: Pareto-Optimal Timestep Selection for Energy-Efficient SNN Anomaly Detection</em> to ICONS 2026. Applying for PhD positions in Germany, Sweden, the Netherlands, and Austria.
+      <strong>Current:</strong> DevOps Engineer at Factyze. Actively wrapping up AWS Solutions Architect and Terraform Associate certifications. 
     </div>
 
     <div class="contact-row">
@@ -473,137 +454,67 @@
     </div>
   </section>
 
-  <!-- ===== RESEARCH ===== -->
-  <section id="research" class="wrap">
-    <div class="section-label">Research interests</div>
+  <!-- ===== EXPERTISE ===== -->
+  <section id="expertise" class="wrap">
+    <div class="section-label">Engineering Focus</div>
     <h2>What I work on</h2>
 
     <p>
-      My research sits at the intersection of efficient machine learning and neuromorphic computing, with a methodological commitment to rigorous, reproducible evaluation across multiple seeds and datasets. Three threads run through recent work.
+      My focus is on creating clean separations between core infrastructure and the applications running on it, treating operations as code, and ensuring full visibility into distributed systems.
     </p>
 
     <div class="skill-group" style="margin-top: 1.75rem;">
-      <div class="skill-label">Energy-efficient inference</div>
-      <div class="skill-items">Spiking neural networks for anomaly detection, timestep-sensitivity Pareto analysis, and theoretical energy projections on neuromorphic substrates such as Intel Loihi. Empirical work on NSL-KDD, UNSW-NB15, thyroid, and cardiotocography benchmarks.</div>
+      <div class="skill-label">Infrastructure as Code</div>
+      <div class="skill-items">Provisioning complete, reproducible AWS environments from scratch using Terraform. Managing state, building custom modules, and configuring VPCs, ECS Fargate services, and managed databases with zero manual console clicking.</div>
     </div>
 
     <div class="skill-group">
-      <div class="skill-label">Neural combinatorial optimisation</div>
-      <div class="skill-items">Generalisation behaviour of attention-based solvers for the Travelling Salesman Problem at scales from TSP-20 to TSP-200, with progressive instance scaling and graph embedding normalisation as fine-tuning strategies.</div>
+      <div class="skill-label">Observability & Incident Response</div>
+      <div class="skill-items">Routing structured JSON logs into Loki for LogQL querying, building out Grafana dashboards and Prometheus metrics, and taking ownership of writing incident runbooks and post-mortems for live B2C platforms.</div>
     </div>
 
     <div class="skill-group">
-      <div class="skill-label">LLM compression and explainability</div>
-      <div class="skill-items">Quantisation-aware knowledge distillation for reasoning benchmarks (HellaSwag, ARC, WinoGrande), and SHAP and LIME applied to ML systems in regulated domains.</div>
-    </div>
-  </section>
-
-  <!-- ===== PUBLICATIONS ===== -->
-  <section id="publications" class="wrap">
-    <div class="section-label">Publications</div>
-    <h2>Peer-reviewed research</h2>
-
-    <div class="pub-stats">
-      <span>Google Scholar: 27 citations</span>
-      <span>h-index: 2</span>
-      <span>i10-index: 2</span>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">T=8 or Not T=8: Pareto-Optimal Timestep Selection for Energy-Efficient SNN Anomaly Detection</div>
-      <div class="pub-meta">Khan, S. · ICONS 2026 (under review) <span class="pub-citations">submitted</span></div>
-      <p>Timestep-sensitivity Pareto frontier analysis for spiking autoencoders. Multi-seed evaluation across five seeds and four benchmark datasets, with honest energy labelling distinguishing measured GPU energy from theoretical neuromorphic projections.</p>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">Novel Identity Check Using W3C Standards and Hybrid Blockchain for Paperless Verification</div>
-      <div class="pub-meta">Khan, S., Al-Amin, M. · IJIEEB Vol. 15 No. 4, 2023</div>
-      <p>DOI: <a href="https://doi.org/10.5815/ijieeb.2023.04.02" target="_blank" rel="noopener">10.5815/ijieeb.2023.04.02</a></p>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">Towards a Secured Smart IoT Using Lightweight Blockchain for Pharmacy Products</div>
-      <div class="pub-meta">Sohan, M., Khan, S. et al. · arXiv, 2022 <span class="pub-citations">13 citations</span></div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-title">A Pragmatical Study on Blockchain-Empowered Decentralized Application Development Platform</div>
-      <div class="pub-meta">Khan, S. et al. · ICCA 2020 (ACM) <span class="pub-citations">14 citations</span></div>
-      <p>DOI: <a href="https://dl.acm.org/doi/10.1145/3377049.3377136" target="_blank" rel="noopener">10.1145/3377049.3377136</a></p>
+      <div class="skill-label">CI/CD & Secure Deployments</div>
+      <div class="skill-items">Hardening pipelines in GitHub Actions via OIDC federation to AWS IAM roles, eliminating static credentials, and driving safe, zero-downtime rolling deployments across identical environments.</div>
     </div>
   </section>
 
   <!-- ===== PROJECTS ===== -->
   <section id="projects" class="wrap">
     <div class="section-label">Selected projects</div>
-    <h2>Research and engineering</h2>
+    <h2>Cloud & Infrastructure Architecture</h2>
 
     <div class="project">
       <div class="project-header">
-        <h3>Timestep-Sensitivity Pareto Analysis for SNNs</h3>
+        <h3>Event-Driven Ingestion Platform</h3>
         <div class="project-links">
-          <a href="https://github.com/samiurk70/Timestep-Sensitivity-Pareto-Analysis-SNN-" target="_blank" rel="noopener">github</a>
+          <a href="https://github.com/samiurk70/game-deals-aggregator" target="_blank" rel="noopener">github</a>
         </div>
       </div>
-      <div class="project-stack">Python · PyTorch · SpikingJelly · FLOPs analysis · multi-seed evaluation</div>
-      <p>Demonstrated that SNN-based inference matches deep autoencoder F1-scores within 1.3% on real benchmark datasets (Thyroid, NSL-KDD) while achieving a 35 to 87x reduction in energy consumption. Includes T-sensitivity analysis across T ∈ {4, 8, 16, 32} and a Pareto-optimal selection methodology.</p>
+      <div class="project-stack">Terraform · Docker · AWS (ECS Fargate, ALB, RDS, EventBridge, SQS) · Python</div>
+      <p>Designed and provisioned a full stack in Terraform utilizing scheduled ingestion via EventBridge to pull data into SQS, consumed by Fargate workers. Implemented exponential backoff for rate limits and a dead letter queue for exhausted retries. Instrumented silent-failure detection via CloudWatch alarms, ensuring data freshness. Handled a live schema-breaking incident by pushing a hotfix and re-driving failed messages directly from the DLQ.</p>
     </div>
 
     <div class="project">
       <div class="project-header">
-        <h3>ReviewerMatch — Semantic Researcher Discovery</h3>
+        <h3>Multi-Cloud Kubernetes Platform</h3>
         <div class="project-links">
-          <a href="https://github.com/samiurk70/reviewermatch-api" target="_blank" rel="noopener">github</a>
+          <a href="https://github.com/samiurk70/multi-cloud-k8s" target="_blank" rel="noopener">github</a>
         </div>
       </div>
-      <div class="project-stack">FastAPI · sentence-transformers · FAISS · Railway · Vercel · PostgreSQL</div>
-      <p>Production ML system indexing active ML and CS researchers from OpenAlex into a 384-dimensional semantic space. Returns ranked shortlists for peer review, collaboration, and supervisor search, reranked by similarity, h-index, and recency. Deployed full-stack with edge proxying and pre-computed embeddings.</p>
-      <a href="https://reviewermatch.vercel.app" target="_blank" rel="noopener" class="project-demo">Live demo →</a>
+      <div class="project-stack">Kubernetes (EKS, AKS) · Terraform · Helm · GitHub Actions</div>
+      <p>Ran an identical workload on Amazon EKS and Azure AKS from byte-identical manifests. Built parallel Terraform provider modules exposing matched interfaces so changing the cloud provider is an environment selection rather than a rewrite. Configured ingress with TLS termination and resolved a critical node memory pressure incident by enforcing Kyverno admission policies on resource limits.</p>
     </div>
 
     <div class="project">
       <div class="project-header">
-        <h3>GrantMatch — Funding Opportunity Retrieval</h3>
+        <h3>Public Endpoint Telemetry & Observability Pipeline</h3>
         <div class="project-links">
-          <a href="https://github.com/samiurk70/grantmatch-api" target="_blank" rel="noopener">github</a>
+          <a href="https://github.com/samiurk70/telemetry-platform" target="_blank" rel="noopener">github</a>
         </div>
       </div>
-      <div class="project-stack">FastAPI · ML reranker · semantic search · 24,699 grants indexed</div>
-      <p>Parent project for ReviewerMatch. A neural information retrieval system for UK and EU research funding, ingesting from UKRI, Innovate UK, GOV.UK, and European Commission CORDIS. Matches project descriptions to active grants through semantic similarity with TRL, sector, and organisation-type filters.</p>
-      <a href="https://grantmatch-web.vercel.app/demo" target="_blank" rel="noopener" class="project-demo">Live demo →</a>
-    </div>
-
-    <div class="project">
-      <div class="project-header">
-        <h3>Human Gait Analysis — Biomedical ML</h3>
-        <div class="project-links">
-          <a href="https://github.com/samiurk70/Gait-Readme" target="_blank" rel="noopener">github</a>
-        </div>
-      </div>
-      <div class="project-stack">Python · MySQL · Random Forest · Dynamic Time Warping · SHAP · LIME</div>
-      <p>Pattern-recognition pipeline on real pressure and temperature data from 312 patients, identifying gait abnormalities across four metatarsal regions. Abnormality index achieved 22% detection accuracy for patients requiring medical attention, against a 10% baseline. Awarded Top 5 MSc Data Science thesis at Middlesex University, 2025, graded Distinction.</p>
-    </div>
-
-    <div class="project">
-      <div class="project-header">
-        <h3>Neural Combinatorial Optimisation Study</h3>
-        <div class="project-links">
-          <a href="https://github.com/samiurk70/Neural-co-generalisation" target="_blank" rel="noopener">github</a>
-        </div>
-      </div>
-      <div class="project-stack">Python · PyTorch Geometric · TSPLib · GNN · Attention Model</div>
-      <p>Reproduced and extended Kool et al. across TSP-20 to TSP-200, quantifying non-linear generalisation degradation above a critical scale threshold. Proposed progressive instance scaling and graph embedding normalisation, closing the optimality gap by 2% without full retraining.</p>
-    </div>
-
-    <div class="project">
-      <div class="project-header">
-        <h3>Quantisation-Aware Knowledge Distillation for LLM Reasoning</h3>
-        <div class="project-links">
-          <a href="https://github.com/samiurk70/Qa-Kd-llm-reasoning" target="_blank" rel="noopener">github</a>
-        </div>
-      </div>
-      <div class="project-stack">Python · HuggingFace · BitsAndBytes · GPTQ · DistilBERT</div>
-      <p>Joint QA-KD retained higher reasoning accuracy at 4-bit precision than sequential compression, with 1.67% gains on out-of-distribution benchmarks (HellaSwag, ARC, WinoGrande).</p>
+      <div class="project-stack">AWS ECS · Grafana · Loki · Promtail · Prometheus · Terraform</div>
+      <p>Deployed a public HTTP service to capture genuine internet scan traffic as a live data source. Built a log pipeline shipping structured JSON via Promtail into Loki, surfaced in Grafana. Investigated and mitigated a massive botnet scan that crashed Loki by temporarily increasing memory, enforcing strict log retention, and applying rate-limiting to drop excessive payloads.</p>
     </div>
   </section>
 
@@ -614,15 +525,15 @@
 
     <div class="entry">
       <div class="entry-header">
-        <div class="entry-role">AI / ML Research Engineer</div>
+        <div class="entry-role">DevOps Engineer</div>
         <div class="entry-date">Aug 2025 — Present</div>
       </div>
-      <div class="entry-org">Self-directed applied research · London, UK</div>
+      <div class="entry-org">Factyze · London, UK (Contract)</div>
       <ul class="bullets">
-        <li>Designed and benchmarked an SNN architecture in SpikingJelly achieving anomaly-detection F1 within 1.3% of ANN baselines, with 35 to 87x energy reduction.</li>
-        <li>Reproduced and extended the attention model for TSP across scales 20 to 200, proposing fine-tuning strategies that closed the optimality gap by 2% without retraining.</li>
-        <li>Investigated quantisation-aware knowledge distillation for LLM compression, with joint QA-KD outperforming sequential compression by 1.67% on reasoning benchmarks.</li>
-        <li>Conducting XAI research with Middlesex University academic staff using SHAP and LIME for model transparency in regulated domains.</li>
+        <li>Transitioned platform operations entirely to Infrastructure as Code, setting up clear observability standards to ensure systems are highly resilient and capable of self-healing.</li>
+        <li>Created a clean separation between core infrastructure and applications—workloads simply supply an image, port, and health check to automatically inherit networking, log routing, and autoscaling.</li>
+        <li>Secured CI/CD pipelines in GitHub Actions by implementing OIDC federation directly to AWS IAM roles.</li>
+        <li>Managed the complete observability stack for a live B2C platform, including Grafana dashboards, Loki log aggregation, and Prometheus metrics, while authoring detailed incident runbooks.</li>
       </ul>
     </div>
 
@@ -633,9 +544,8 @@
       </div>
       <div class="entry-org">American International University Bangladesh · Dhaka</div>
       <ul class="bullets">
-        <li>Delivered undergraduate modules in discrete mathematics, computer networks, and Cisco-certified courses to cohorts of 60 plus students.</li>
-        <li>Designed and launched a new PGD curriculum covering ICT, data science, and cybersecurity, adopted as a core departmental offering.</li>
-        <li>Supervised 8 final-year undergraduate research theses, with 2 students progressing to publication.</li>
+        <li>Taught Computer Networks, Linux, and Cisco IOS to cohorts of 60+ undergraduates, including lab-based network configuration, routing, switching, and troubleshooting.</li>
+        <li>Built and maintained the physical and virtual lab environments used for teaching network simulators and sandboxes for hands-on exercises.</li>
       </ul>
     </div>
 
@@ -646,42 +556,8 @@
       </div>
       <div class="entry-org">Deepchain Labs · Dhaka</div>
       <ul class="bullets">
-        <li>Led data-driven marketing analytics across five enterprise clients using HubSpot, Google Analytics, and Tableau, informing Web3 go-to-market strategy.</li>
-        <li>Conducted Python and SQL market research, reducing requirement-gathering cycles by approximately 30%.</li>
+        <li>Gathered and documented technical requirements across five enterprise clients, translating distributed-systems architecture into specifications for non-technical stakeholders.</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- ===== EDUCATION ===== -->
-  <section id="education" class="wrap">
-    <div class="section-label">Education</div>
-    <h2>Academic background</h2>
-
-    <div class="entry">
-      <div class="entry-header">
-        <div class="entry-role">MSc Data Science</div>
-        <div class="entry-date">Jan 2024 — Feb 2025</div>
-      </div>
-      <div class="entry-org">Middlesex University London</div>
-      <p style="font-size: 0.98rem; color: var(--ink-muted);">Awarded <strong>Distinction</strong>. Top 5 MSc thesis project across the Data Science cohort, 2025. Modules: Machine Learning, Visual Data Analysis, Applied Data Analytics, Ethics in Data Science.</p>
-    </div>
-
-    <div class="entry">
-      <div class="entry-header">
-        <div class="entry-role">MSc Computer Network and Architecture</div>
-        <div class="entry-date">Jan 2021 — Sep 2022</div>
-      </div>
-      <div class="entry-org">American International University Bangladesh</div>
-      <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Summa Cum Laude</strong>, CGPA 3.98 / 4.00. Modules: Advanced Computer Networks, Cisco DevOps, Cyberops, Parallel Computation, System Security.</p>
-    </div>
-
-    <div class="entry">
-      <div class="entry-header">
-        <div class="entry-role">BSc Computer Science</div>
-        <div class="entry-date">Jan 2016 — Dec 2019</div>
-      </div>
-      <div class="entry-org">American International University Bangladesh</div>
-      <p style="font-size: 0.98rem; color: var(--ink-muted);"><strong>Best BSc Thesis Award</strong> at ICCA conference, ACM publications. Modules: Discrete Mathematics, Computer Graphics, Web Technology, Embedded Systems, CCNA, Linux.</p>
     </div>
   </section>
 
@@ -691,28 +567,50 @@
     <h2>Tools and methods</h2>
 
     <div class="skill-group">
-      <div class="skill-label">Languages</div>
-      <div class="skill-items">Python, R, C / C++, SQL</div>
+      <div class="skill-label">Cloud & Infrastructure</div>
+      <div class="skill-items">AWS (EC2, VPC, IAM, S3, ECS/Fargate, ECR, RDS, ALB, EventBridge, SQS, Route 53), CIDR design, Load Balancing, DNS</div>
     </div>
 
     <div class="skill-group">
-      <div class="skill-label">Machine learning</div>
-      <div class="skill-items">PyTorch, TensorFlow, Scikit-learn, HuggingFace, SpikingJelly, NumPy, Pandas, SHAP, LIME</div>
+      <div class="skill-label">IaC & Containers</div>
+      <div class="skill-items">Terraform, CloudFormation, Docker, Docker Compose, Amazon ECS, Kubernetes (EKS/AKS)</div>
     </div>
 
     <div class="skill-group">
-      <div class="skill-label">Research areas</div>
-      <div class="skill-items">Neuromorphic ML, spiking neural networks, anomaly detection, knowledge distillation, LLM compression, graph neural networks, RAG, transformer architectures, combinatorial optimisation, explainable AI</div>
+      <div class="skill-label">CI/CD & Observability</div>
+      <div class="skill-items">GitHub Actions, Git, OIDC federation, Grafana, Loki, Prometheus, CloudWatch, Elasticsearch, Bash & Python scripting</div>
     </div>
 
     <div class="skill-group">
-      <div class="skill-label">Infrastructure</div>
-      <div class="skill-items">MySQL, MongoDB, PostgreSQL, Apache Spark, Hadoop, AWS Redshift, Google Cloud, Docker, Git, CI / CD, MLflow, FastAPI, REST APIs</div>
+      <div class="skill-label">Networking & Security</div>
+      <div class="skill-items">Linux Administration, TCP/IP, Routing & Switching, Cisco IOS, VPNs, Wireshark, IAM Least Privilege, Secrets Management</div>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICATIONS (Brief) ===== -->
+  <section id="publications" class="wrap">
+    <div class="section-label">Academic Background</div>
+    <h2>Publications & Education</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">MSc Data Science (Distinction)</div>
+        <div class="entry-date">2024 — 2025</div>
+      </div>
+      <div class="entry-org">Middlesex University London</div>
     </div>
 
-    <div class="skill-group">
-      <div class="skill-label">Analytics</div>
-      <div class="skill-items">Power BI, Tableau, Excel, Google Data Studio</div>
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">MSc Computer Network & Architecture (Summa Cum Laude)</div>
+        <div class="entry-date">2021 — 2022</div>
+      </div>
+      <div class="entry-org">American International University Bangladesh</div>
+    </div>
+
+    <div class="pub-item" style="margin-top: 2rem;">
+      <div class="pub-title">Selected Research</div>
+      <p style="font-size: 0.95rem; margin-top: 0.5rem;">Author of peer-reviewed papers in distributed systems, IoT security, and spiking neural networks (ICCA, IJIEEB, ICONS). Held a strong academic focus on efficient machine learning and network security prior to pivoting to cloud infrastructure.</p>
     </div>
   </section>
 
@@ -722,11 +620,7 @@
     <h2>Get in touch</h2>
 
     <p>
-      I am actively applying for PhD positions for 2026 entry, with a particular interest in groups working on neuromorphic computing, efficient ML inference, and high-performance computing in Germany, Sweden, the Netherlands, and Austria. I am equally open to applied research roles.
-    </p>
-
-    <p>
-      The best way to reach me is by email. Reference letters, unpublished drafts, and the ICONS 2026 submission are available on request.
+      I am actively looking for platform, DevOps, or cloud operations roles where my foundational depth in Linux and networking can bring immediate value to an engineering team.
     </p>
 
     <div class="contact-row">
@@ -741,10 +635,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    © 2026 Samiur Rahman Khan &nbsp;·&nbsp; London, UK &nbsp;·&nbsp; Last updated April 2026
-    <div style="margin-top: 0.75rem;">
-      <a href="./engineering.html">Engineering profile →</a>
-    </div>
+    © 2026 Samiur Rahman Khan &nbsp;·&nbsp; London, UK &nbsp;·&nbsp; Last updated September 2026
   </div>
 </footer>
 
